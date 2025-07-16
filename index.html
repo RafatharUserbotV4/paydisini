@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About RafatharCode</title>
+  <link rel="icon" href="https://files.catbox.moe/1mrgbt.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .container, .main-content {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .typing-text {
+      font-size: 1rem;
+      color: #ddd;
+      margin-bottom: 1.5rem;
+      min-height: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .links a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.03);
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    .loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #0f2027;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      animation: fadeOut 2s 2s forwards;
+    }
+
+    .loading-screen h1 {
+      font-size: 2rem;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .next-button {
+      background: linear-gradient(135deg, #00c9ff, #92fe9d);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    .next-button:hover {
+      transform: scale(1.05);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .lyrics {
+      font-size: 0.85rem;
+      color: #ccc;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .product {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+
+    .product h3 {
+      margin: 0.5rem 0;
+    }
+
+    .product p {
+      margin-bottom: 1rem;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    .product .next-button {
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-screen" id="loading">
+    <h1>Welcome, RafatharCode</h1>
+  </div>
+
+  <div class="container" id="intro">
+    <img src="https://files.catbox.moe/1mrgbt.jpg" alt="Profile" class="profile-img">
+    <h1>RafatharCode</h1>
+    <div class="typing-text" id="introTyping"></div>
+    <div class="button-group">
+      <button class="next-button" onclick="goToMain()">Hi Buyer RafatharCode</button>
+    </div>
+  </div>
+
+  <div class="main-content" id="main">
+    <img src="https://files.catbox.moe/1mrgbt.jpg" alt="Profile" class="profile-img">
+    <h1>RafatharCode Developer</h1>
+    <div class="typing-text" id="mainTyping"></div>
+    <div class="links">
+      <a href="https://wa.me/6285864743922" target="_blank">
+        <img src="https://files.catbox.moe/fioxb4.jpg" class="icon" /> WhatsApp
+      </a>
+      <a href="https://www.youtube.com/@RafatharCode444" target="_blank">
+        <img src="https://files.catbox.moe/28md1r.jpg" class="icon" /> YouTube
+      </a>
+      <a href="https://github.com/RafatharUserbotV4" target="_blank">
+        <img src="https://files.catbox.moe/y287d7.jpg" class="icon" /> GitHub
+      </a>
+    </div>
+    <div class="button-group">
+      <button class="next-button" onclick="showSection('shop')">Shop</button>
+      <button class="next-button" onclick="showSection('payment')">Payment</button>
+    </div>
+    <div class="lyrics" id="lyrics">Doain usaha gua lancar :)</div>
+    <div class="footer">
+      <p>© RafatharCode - රඩ</p>
+    </div>
+  </div>
+
+  <div class="main-content" id="shop" style="display:none;">
+    <h1>Shop</h1>
+    <div class="product">
+      <img src="https://files.catbox.moe/1mrgbt.jpg" alt="Product" class="product-img">
+      <h3>Bot Telegram</h3>
+      <p>Bot Custom Sesuai Kebutuhanmu, Bot Cpanel, Bug, Dll.</p>
+      <a href="https://wa.me/6285864743922?text=Halo%20saya%20mau%20beli%20Kebutuhan%20Hosting" target="_blank" class="next-button">Buy</a>
+    </div>
+    <div class="product">
+      <img src="https://files.catbox.moe/1mrgbt.jpg" alt="Product" class="product-img">
+      <h3>Bot WhatsApp</h3>
+      <p>Bot Custom Sesuai Kebutuhanmu, Bot Cpanel, Bug, Dll.</p>
+      <a href="https://wa.me/6285864743922?text=Halo%20saya%20mau%20beli%20Kebutuhan%20Hosting" target="_blank" class="next-button">Buy</a>
+    </div>
+    <div class="product">
+      <img src="https://files.catbox.moe/1mrgbt.jpg" alt="Product" class="product-img">
+      <h3>Jasa Pembuatan Script</h3>
+      <p>Script Custom Sesuai Kebutuhanmu, Bot Cpanel, Bug, Dll.</p>
+      <a href="https://wa.me/6285864743922?text=Halo%20saya%20mau%20beli%20jasa%20bikin%20Script" target="_blank" class="next-button">Buy</a>
+    </div>
+    <div class="product">
+      <img src="https://files.catbox.moe/1mrgbt.jpg" alt="Product" class="product-img">
+      <h3>Jasa Website</h3>
+      <p>Web Store, Portofolio, Dll.</p>
+      <a href="https://wa.me/6285864743922?text=Halo%20saya%20mau%20pesan%20Jasa%20Website" target="_blank" class="next-button">Buy</a>
+    </div>
+    <button class="next-button" onclick="backToMain()">Back</button>
+  </div>
+
+  <div class="main-content" id="payment" style="display:none;">
+    <h1>Payment RafatharCode</h1>
+    <div class="product">
+      <img src="https://files.catbox.moe/rblhmd.jpg" class="product-img" alt="Dana">
+      <h3>Dana</h3>
+      <p>RafatharCode Paymen</p>
+      <button class="next-button" onclick="copyNumber('08388329551')">Copy</button>
+    </div>
+
+    <div class="product">
+      <img src="https://files.catbox.moe/m3zrlf.jpg" class="product-img" alt="OVO">
+      <h3>OVO</h3>
+      <p>RafatharCode Paymen</p>
+      <button class="next-button" onclick="copyNumber('083835382136')">Copy</button>
+    </div>
+
+    <div class="product">
+      <img src="https://files.catbox.moe/5ua4wh.jpg" class="product-img" alt="GoPay">
+      <h3>GoPay</h3>
+      <p>RafatharCode Paymen</p>
+      <button class="next-button" onclick="copyNumber('083183432282')">Copy</button>
+    </div>
+  <div style="margin-top: 3rem; text-align: center;">
+    <h2 style="margin-bottom: 1rem;">Scan QRIS Untuk Pembayaran</h2>
+    <img src="https://files.catbox.moe/yheioz.jpg" alt="QRIS" style="max-width: 300px; width: 100%; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);" />
+  </div>
+    <button class="next-button" onclick="backToMain()">Back</button>
+  </div>
+
+  <audio id="audio" src="https://files.catbox.moe/5ak2ek.mp4" preload="auto"></audio>
+
+  <script>
+    const loading = document.getElementById('loading');
+    const intro = document.getElementById('intro');
+    const main = document.getElementById('main');
+    const audio = document.getElementById('audio');
+
+    const texts = ["Web Developer", "Bot Developer", "Attacker"];
+    
+    function typeText(el, words) {
+      let index = 0, char = 0, isAttacker = false;
+      function type() {
+        if (!isAttacker && index < words.length) {
+          if (char <= words[index].length) {
+            el.textContent = words[index].slice(0, char++);
+            setTimeout(type, 100);
+          } else {
+            index++; char = 0;
+            setTimeout(type, 600);
+          }
+        } else if (!isAttacker) {
+          isAttacker = true;
+          el.innerHTML += "<br><span id='TexT'></span>";
+          typeAttacker();
+        }
+      }
+      function typeAttacker() {
+        let TexT = "Dibuat Oleh RafatharCode Developer";
+        let aText = document.getElementById("TexT");
+        let aIndex = 0;
+        function aType() {
+          if (aIndex <= TexT.length) {
+            aText.textContent = TexT.slice(0, aIndex++);
+            setTimeout(aType, 120);
+          }
+        }
+        aType();
+      }
+      type();
+    }
+
+    window.onload = () => {
+      setTimeout(() => {
+        loading.style.display = 'none';
+        intro.style.display = 'block';
+        typeText(document.getElementById("introTyping"), texts);
+      }, 2000);
+    };
+
+    function goToMain() {
+      intro.style.display = 'none';
+      main.style.display = 'block';
+      audio.play();
+      typeText(document.getElementById("mainTyping"), texts);
+    }
+
+    function showSection(section) {
+      document.querySelectorAll('.main-content').forEach(el => el.style.display = 'none');
+      document.getElementById(section).style.display = 'block';
+    }
+
+    function backToMain() {
+      document.querySelectorAll('.main-content').forEach(el => el.style.display = 'none');
+      main.style.display = 'block';
+    }
+
+    function copyNumber(number) {
+      navigator.clipboard.writeText(number);
+      alert("Nomor berhasil disalin!");
+    }
+  </script>
+</body>
